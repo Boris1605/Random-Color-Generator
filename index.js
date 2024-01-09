@@ -2,23 +2,27 @@ import { argv } from 'node:process';
 import chalk from 'chalk';
 import randomColor from 'randomcolor';
 
+let finalColor;
 const colorName = argv[2];
 const brightnessLum = argv[3];
+if (colorName) {
+  finalColor = randomColor({
+    luminosity: brightnessLum,
+    hue: colorName,
+  });
+} else {
+  finalColor = randomColor();
+}
+console.log(colorName, brightnessLum);
 
-const userColor = randomColor({
-  luminosity: brightnessLum,
-  hue: colorName,
-});
-
-const color = randomColor();
-const changeColor = chalk.hex(userColor);
+const changeColor = chalk.hex(finalColor);
 
 console.log(
   changeColor(`###############################
 ###############################
 ###############################
 #####                     #####
-#####      ${color}        #####
+#####      ${finalColor}        #####
 #####                     #####
 ###############################
 ###############################
