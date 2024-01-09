@@ -13,7 +13,6 @@ if (colorName) {
 } else {
   finalColor = randomColor();
 }
-console.log(colorName, brightnessLum);
 
 const changeColor = chalk.hex(finalColor);
 
