@@ -3,10 +3,10 @@ import chalk from 'chalk';
 import randomColor from 'randomcolor';
 
 const colorName = argv[2];
-const luminosity = argv[3];
+const brightnessLum = argv[3];
 
 const userColor = randomColor({
-  luminosity: luminosity,
+  luminosity: brightnessLum,
   hue: colorName,
 });
 
